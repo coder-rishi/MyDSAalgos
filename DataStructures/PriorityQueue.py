@@ -1,7 +1,13 @@
 class LinkedNode:
     '''
-    Implementation of a linked list in python without an explicit LinkedList class - only using LinkedNode objects.
+    Implementation of a priority Queue using a linked list in python without an explicit LinkedList class - only using LinkedNode objects.
     Enqueue, dequeue, and len() are methods defined on the head node of the linked list.
+    
+    Enqueue: O(n)
+    Dequeue: O(1)
+    len(): O(1)
+    search: O(n)
+
 
     Repr: LinkedNode(value)
     '''
@@ -22,6 +28,15 @@ class LinkedNode:
         self.next = self.next.next
 
         return value
+
+    def search(self, value):
+        a = self
+        while a != None and a.value != value:
+            a = a.next
+        if a == None:
+            return False
+        else:
+            return True
 
     def __len__(self):
         c = 0
